@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Welcome.js</title>
+    <style type="text/css">
+        .chartBox{
+            width: 80%;
+        }
+    </style>
+    	
+</head>  
+
+<body>
+    <p>
+        <form action="/" method="POST">
+            <h4>Homepage</h4>
+            <br>
+            <input type="submit" value="Back">
+        </form>
+    </p>
+    <div class="chartBox">
+        <canvas id="myChart"></canvas>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></script>
+<script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
+
+
+<script>
+    //setup block
+    let result= JSON.parse({{result1 | tojson}});
+    const data = {
+        //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: result,
+        datasets: [{
+            label: 'All Months',
+            data: result,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    //config block
+    const config = {
+        type: 'pie', 
+        data,
+        options: {
+            layout:{
+                padding: 25
+            },
+            plugins:{
+                labels:{
+                    position: 'outside',
+                },
+            },
+        },
+        plugins: [ChartDataLabels] 
+    };
+
+    //render block
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+</script>
+
+</body>
+</html>

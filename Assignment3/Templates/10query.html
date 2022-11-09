@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}      
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2  style="text-align:center;">Ganesh Dontha 1002006784</h2>
+
+    <form action="/" method="POST">
+        <h4>Homepage</h4>
+        <br>
+        <input type="submit" value="Back">
+    </form>
+</p>
+<table>
+  <tr>    
+    <!-- <th>min</th>
+    <th>max</th> -->
+    <th>year</th>
+    <th>states</th>
+    <th>votes</th>
+    <th>party</th>
+     
+  </tr> 
+    {% for row in voting %}
+    <tr>
+        <td>{{ row[0] }}</td>  
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td> 
+        <td>{{ row[3] }}</td> 
+        
+    </tr>
+     {% for row in new_row %}
+     {{ voting }}
+     {% endfor %}  
+    </tr>
+    {% endfor %}    
+</table>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      table,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <title>Assignment 1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="css.css" />
+    <link type="css" rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="assignment.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Sahithi Edupuganti</h1>
+      <p>UTA ID: 1001759482</p>
+    </div>
+
+    <div class="mb-10">
+      <label>Search</label>
+      <input
+        type="text"
+        id="search_word"
+        placeholder="Enter "
+        name="search_word"
+      />
+      <button type="button" onclick="search('search_word')">filter</button>
+    </div>
+
+    <table style="width: 100%"></table>
+    <div id="output_div">
+      <div id="myData" style="color: green"></div>
+      <div id="myDataNo"></div>
+    </div>
+  </body>
+</html>

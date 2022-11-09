@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/90f7dd4d-83f0-4731-b1c2-1300416615ec/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/assignment3adb",
+    "appService.deploySubpath": "."
+}

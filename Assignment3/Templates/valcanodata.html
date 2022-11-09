@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}      
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2  style="text-align:center;">Ganesh Dontha 1002006784</h2>
+<p> {{ Timetaken }}</p>   
+<p>
+    <form action="/" method="POST">
+        <h4>Homepage</h4>
+        <br>
+        <input type="submit" value="Back">
+    </form>
+</p>
+{{Timetaken}}
+<table>
+  <tr>    
+    <th>Number</th>
+    <th>Volcano Name</th>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Elev</th>
+  </tr> 
+  <tr>
+    {% for row in result %}
+    <tr>
+        {% for cell in row %}  
+        <td>{{ cell }}</td>    
+        {% endfor %}
+    </tr>
+    {% endfor %}    
+  </tr>
+  </table>
+
+</body>
+</html>
+

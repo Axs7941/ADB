@@ -1,0 +1,373 @@
+
+Name: Sahithi Edupuganti
+Last 4 digits ID: 9482
+
+CSE 6331, Cloud Computing					
+
+
+I understand that I am on my honor during this quiz, I will not collaborate, use 
+non-allowed sources, and I will not discuss or share this quiz with anyone for the next 12 hours.
+
+You MAY: use Google to search, use previous source code, 
+
+YOU MAY NOT use:
+Email, Facebook, Hangouts, IM, chats, Skype or ANY other human connection.
+
+Honor violations will result in -100 points as well as being reported.
+
+
+
+
+
+
+
+This is a timed test. Late tests will have points deducted for being late.
+Very late tests will not be graded.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quiz Q5, Spring 2021   (c) DL, UTA, 2021
+
+  C&P means cut and paste only those relevant lines from your program(s) into this quiz.
+
+ 1.  I understand that I am on my honor during this quiz, I will not collaborate, use 
+     non-allowed sources, and I will not discuss or share this quiz with anyone for the next 
+     12 hours.
+     You MAY: use Google to search, use previous source code, 
+     YOU MAY NOT use:
+     Email, Facebook, Hangouts, IM, chats, Skype or ANY other human connection.
+
+     This is a timed test. Late tests will have points deducted for being late.
+     Very late tests will not be graded.
+
+     When you are complete, with any part, please send the link, raise your hand, so we may visually inspect that part.
+
+     The second part of the test, you should electronically submit, you will need to copy and paste 
+     only those lines of code to implement that part of the test, usually a few (two to eight) lines of code. 
+     Place it immediately after the question.
+
+     Submit this Quiz (renamed) with code cut and pasted, ONLY text. DO NOT submit zips, binaries, libraries,
+     or anything other than text.
+
+     When any parts(questions) are complete, submit this test, you may make multiple submissions.
+
+     If you have computer, or other, problems, please raise your hand immediately.
+
+     If you understand and agree, please initial here:
+     _______SE__________
+
+ 2. Get files from this same folder.
+   
+ 3. Name your program/submission with your name and last digits of your ID.
+
+ 4. Using the cloud services provider, all functionality possible should be implemented on that provider.
+    (Of course, displaying web pages through a browser and the user interface is "local")
+  
+ 5. Please do not wait until the end of the quiz to show us any part (entire question or part of a question), 
+    we will only be able to look at (try out) one, single submission from anyone in the last 10 minutes 
+    of the quiz, as time permits.
+
+ 6. Grades will be determined by demoing your application on a cloud service provider and a textual submission to Canvas.
+    You will receive full points ONLY if your application works correctly, you demo it, and you submit on Canvas.
+    All parts, on time.
+    You will receive significantly fewer points, otherwise.
+
+ 7. For full credit, you may use Google cloud or Amazon AWS. 
+    If you use a different public cloud provider you will receive significantly fewer maximum points.
+
+Show and submit code, when each part is complete, raise your hand and then show us:
+
+ 10. Please show a web page and interface (which resides on the cloud provider) with your student ID on the top and below that
+     your name in large font at the top of every web page displayed (for this quiz.) 
+     Please get the texts and import/upload to the cloud provider (this does not need to be done through a web interface.).
+     On a web page, for each text show the name of the text file and the number of words in that text 
+     (please do not remove any words, yet.)
+
+<button type="button" onclick="showWordCount()">Show Word Count</button>
+
+function showWordCount() {
+  fetch("/showWordCount", {
+    method: "GET", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      add_word_count_table(data.data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  return false;
+}
+
+function add_word_count_table(data) {
+  var headers = ["name", "word_count"];
+  var headings = ["File Name", "Word Count"];
+
+  document.getElementById("wordCount").innerHTML = "";
+
+  var outputHTML = "";
+  outputHTML += "<table>";
+  outputHTML += "<tr>";
+  for (var i = 0; i < headers.length; i++) {
+    outputHTML += "<th>" + headings[i] + "</th>";
+  }
+  outputHTML += "</tr>";
+  for (var i in data) {
+    outputHTML += "<tr>";
+    outputHTML += "<td>" + i + "</td>";
+    outputHTML += "<td>" + data[i] + "</td>";
+    outputHTML += "</tr>";
+  }
+  outputHTML += "</table>";
+  // output our html
+  document.getElementById("wordCount").innerHTML = outputHTML;
+}
+
+router.get("/showWordCount", (req, res) => {
+  res.json({data: file_words});
+});
+
+
+
+ 11. Please remove all punctuation and the stopwords on the supplied list from each text. 
+     For each text, show the name of the text and the first three lines of text for each.
+
+Remaining questions use text after modified from question 11.
+
+<button type="button" onclick="showFirstThreeLines()">Show First Three Lines</button>
+
+function add_first_three_lines_table(data) {
+  var headers = ["name", "three_lines"];
+  var headings = ["File Name", "1st Line", "2nd Line", "3rd Line"];
+
+  document.getElementById("wordCount").innerHTML = "";
+
+  var outputHTML = "";
+  outputHTML += "<table>";
+  outputHTML += "<tr>";
+  for (var i = 0; i < headings.length; i++) {
+    outputHTML += "<th>" + headings[i] + "</th>";
+  }
+  outputHTML += "</tr>";
+  for (var i in data) {
+    outputHTML += "<tr>";
+    outputHTML += "<td>" + i + "</td>";
+    outputHTML += "<td>" + data[i][0] + "</td>";
+    outputHTML += "<td>" + data[i][1] + "</td>";
+    outputHTML += "<td>" + data[i][2] + "</td>";
+    outputHTML += "</tr>";
+  }
+  outputHTML += "</table>";
+  // output our html
+  document.getElementById("wordCount").innerHTML = outputHTML;
+}
+
+function showFirstThreeLines() {
+  fetch("/showFirstThreeLines", {
+    method: "GET", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      add_first_three_lines_table(data.data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  return false;
+}
+
+router.get("/showFirstThreeLines", (req, res) => {
+  res.json({data: first_three_lines});
+});
+
+async function loadStopWords() {
+  lr = new LineByLineReader('shortliststopwords.txt');
+  lr.on("line", function (line) {
+    stopwords.push(line.replace(/"/g, '').trim());
+  });
+
+  lr.on("end", function () {
+    console.log('Completed Loading stop words');
+    console.log(stopwords);
+  });
+}
+
+function indexFile(num, word_count) {
+  var file_index = num.toString();
+  var line_no = 1;
+  var array_sw = [];
+
+  lr = new LineByLineReader(files[num]);
+  
+  lr.on("line", function (line) {
+    word_count = word_count + line.split(/\s+/).length;
+    const words = stopword.removeStopwords(
+      removePunctuation(line).split(/\s+/), stopwords
+    );
+
+    for (var i = 0; i < words.length; i++) {
+      const word = words[i].toLowerCase();
+      words_file_line[word] = getMapValue(words_file_line, word).concat(
+        file_index + "_" + line_no
+      );
+    }
+    file_line[file_index + "_" + line_no] = words.join(' ');
+
+    if(line_no <= 3){
+      first_three_lines[files[num]] = getMapValue(first_three_lines, files[num]).concat(words.join(' '));
+    }
+
+    line_no++;
+
+  });
+
+  lr.on("end", function () {
+    //console.log('Completed Indexing file ' + num.toString());
+    file_words[files[num]] = word_count;
+  });
+}
+
+async function indexFiles() {
+  await loadStopWords();
+  for (var num = 0; num < files.length; num++) {
+    var word_count = await indexFile(num, 0);
+  }
+}
+
+
+ 12. On a web page, allow a user to give a word and a document name and show the count of how many times that word
+     occurs in that document, and then show the first 20 text lines with that contain that word.
+
+<div class="mb-10">
+      <label>Word</label>
+      <input
+        type="text"
+        id="search_word"
+        placeholder="Enter "
+        name="search_word"
+      />
+      <label>File Name</label>
+      <input
+        type="text"
+        id="file_name"
+        placeholder="Enter "
+        name="file_name"
+      />
+      <button type="button" onclick="show_twenty_lines('file_name', 'search_word')">Show</button>
+
+
+function show_twenty_lines(file_name, search_word) {
+  var file_name = document.getElementById(file_name).value;
+  var search_word = document.getElementById(search_word).value;
+  fetch("/showLines", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ file_name: file_name, search_word: search_word }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      add_twenty_lines(data.data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  return false;
+}
+
+function add_twenty_lines(data) {
+  var headers = ["name", "three_lines"];
+  var headings = ["Count", "Lines"];
+
+  document.getElementById("wordCount").innerHTML = "";
+
+  var outputHTML = "";
+  outputHTML += "<table>";
+  outputHTML += "<tr>";
+  for (var i = 0; i < headings.length; i++) {
+    outputHTML += "<th>" + headings[i] + "</th>";
+  }
+  outputHTML += "</tr>";
+
+  outputHTML += "<tr>";
+  outputHTML += "<td>" + data.count + "</td>";
+  outputHTML += "<td>" + data.lines.join('\n') + "</td>";
+  outputHTML += "</tr>";
+  
+  outputHTML += "</table>";
+  // output our html
+  document.getElementById("wordCount").innerHTML = outputHTML;
+}
+
+
+router.post("/showLines", (req, res) => {
+  var file_name = req.body.file_name;
+  var word = req.body.search_word.toLowerCase();
+
+  var file_index;
+  var lines = [];
+
+  for(var i = 0; i < files.length; i++){
+    if(files[i] === file_name)
+      file_index = i;
+  }
+
+  for(var i = 0; i < words_file_line[word].length; i++){
+    var [index, line] = words_file_line[word][i].split('_');
+    var count = 0;
+    index = parseInt(index);
+    if(index == file_index){
+      count++;
+      if(count <= 20){
+        lines.push(file_line[words_file_line[word][i]]);
+      }
+    }
+  }
+
+  res.json({data: {count: count, lines: lines}});
+});
+
+
+
+ 13. On a web page, allow a user to give two words and a value N then show the name of all texts that contain 
+     that word pair (adjacent word pair), and the first N lines where they occur in each text/document.
+
+
+ 14. Show us, in a link, the application running and we will try it out. Only for parts 10 through 13.
+
+https://advanced-db-309520.uc.r.appspot.com/
+
+ 15. When complete, return (send) this quiz
+     If you finish early, send this immediately, otherwise send between
+     the end of the quiz period and no more than 1 minute after that.
+

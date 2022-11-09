@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      table,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <title>Assignment 1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="css.css" />
+    <link type="css" rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="assignment.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Sahithi Edupuganti</h1>
+      <p>UTA ID: 1001759482</p>
+    </div>
+
+    <div class="mb-10">
+      <label>Word</label>
+      <input
+        type="text"
+        id="search_word"
+        placeholder="Enter "
+        name="search_word"
+      />
+      <label>File Name</label>
+      <input
+        type="text"
+        id="file_name"
+        placeholder="Enter "
+        name="file_name"
+      />
+      <button type="button" onclick="show_twenty_lines('file_name', 'search_word')">Show</button>
+
+      <button type="button" onclick="showWordCount()">Show Word Count</button>
+      <button type="button" onclick="showFirstThreeLines()">Show First Three Lines</button>
+    </div>
+
+    <table style="width: 100%"></table>
+    <div id="output_div">
+      <div id="myData" style="color: green"></div>
+      <div id="myDataNo"></div>
+    </div>
+    <div id="wordCount">
+    </div>
+    <div id="threeLines">
+    </div>
+  </body>
+</html>

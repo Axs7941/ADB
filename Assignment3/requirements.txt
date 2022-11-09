@@ -1,0 +1,5 @@
+Flask 
+Pyodbc
+redis
+geopy
+numpy

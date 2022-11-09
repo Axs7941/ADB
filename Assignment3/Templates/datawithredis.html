@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;   
+}      
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2  style="text-align:center;"> Ganesh Dontha 1002006784</h2>
+
+    <form action="/" method="POST">
+        <h4>Data</h4>
+        <br>
+        <input type="submit" value="Back">
+    </form>
+</p>
+<table>
+  <tr>    
+    <th>LATITUDE</th>
+    <th>LONGTITUDE</th>
+    <th>PLACE</th>
+  </tr> 
+    {% for row in result %}
+    <tr>
+        <td>{{ row[0] }}</td>  
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td> 
+    </tr>
+    {% endfor %}    
+</table>
+{{Timetaken}}
+</body>
+</html>
+

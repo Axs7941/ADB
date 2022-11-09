@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}  
+</style>
+<h1 style="text-align:center;"><u>Abhyudai Singh 1002027941</u> </h1>
+<p> <img src="./static/image0.jpeg"  style="width:200px;height:200px;"></p>
+</head>
+<body>
+    <hr>
+    <form action="/data" method="POST">
+        <h4>To see uploaded data</h4>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/MagN" method="POST">
+        <h4>To find Earthquake of N Magnitude</h4>
+    <label for="MagN">Magnitude greater than  </label>
+    <input type="text" id="MagN" name="MagN" placeholder="Enter Magnitude">
+    </br>
+    <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/earthquakecountbydate" method="POST">
+        <h4>Earthquakes from Date X to Date Y with magnitude greater than N</h4>
+        <br>
+        <label for="DateX1">Start Date  </label> 
+        <input type="text" id="DateX1" name="DateX1" placeholder="Enter Start Date">
+        <label for="DateY1">End Date </label>
+        <input type="text" id="DateY1" name="DateY1" placeholder="Enter End Date">
+        <label for="MagOfQuake">Magnitude greater than  </label>
+        <input type="text" id="MagOfQuake" name="MagOfQuake" placeholder="Enter Magnitude">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/earthquakebydateandmagrange" method="POST">
+        <h4>To Find the Earthquake between given date ranges and mangnitude range</h4>
+        <br>
+        <label for="DateX2">Start Date  </label> 
+        <input type="text" id="DateX2" name="DateX2" placeholder="Enter  start Date">
+        <label for="DateY2">End Date </label>
+        <input type="text" id="DateY2" name="DateY2" placeholder="Enter End Date">
+        <br>
+        <br>
+        <label for="MagOfQuake1">Enter Lower Bound of Magnitude  </label>
+        <input type="text" id="MagOfQuake1" name="MagOfQuake1" placeholder="Enter lowerbound Magnitude">
+        <br>
+        <br>
+        <label for="MagOfQuake2">Enter Upper Bound of Magnitude  </label>
+        <input type="text" id="MagOfQuake2" name="MagOfQuake2" placeholder="Enter  Upperbound Magnitude ">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/countofearthquakebydateandmagrange" method="POST">
+        <h4>To Find the count of Earthquake between given date ranges and mangnitude range</h4>
+        <br>
+        <label for="DateX2">Start Date  </label> 
+        <input type="text" id="DateX2" name="DateX2" placeholder="Enter  start Date">
+        <label for="DateY2">End Date </label>
+        <input type="text" id="DateY2" name="DateY2" placeholder="Enter End Date">
+        <br>
+        <br>
+        <label for="MagOfQuake1">Enter Lower Bound of Magnitude  </label>
+        <input type="text" id="MagOfQuake1" name="MagOfQuake1" placeholder="Enter lowerbound Magnitude">
+        <br>
+        <br>
+        <label for="MagOfQuake2">Enter Upper Bound of Magnitude  </label>
+        <input type="text" id="MagOfQuake2" name="MagOfQuake2" placeholder="Enter  Upperbound Magnitude ">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/placeaffectedbyeartquake" method="POST">
+        <h4>To find the place affected by eartquake</h4>
+        <br>
+        <label for="Place">Place  </label> 
+        <input type="text" id="Place" name="Place" placeholder="Enter place">
+        <label for="Radius">Radius </label>
+        <input type="text" id="Radius" name="Radius" placeholder="Enter Radius">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/toupdate" method="POST">
+        <h4>To Update Magtype</h4>
+        <br>
+        <label for="MagType_current">Enter current value </label> 
+        <input type="text" id="MagType_current" name="MagType_current" placeholder="MagType current value">
+        <label for="MagType_update"> MagType to be updated to :</label>
+        <input type="text" id="MagType_update" name="MagType_update" placeholder="MagType_update">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/clusterofearthquake" method="POST">
+        <h4>To find the cluster of earthquakes within a range</h4>
+        <br>
+        <label for="Latitude">Latitude  </label> 
+        <input type="text" id="Latinput" name="Latinput" placeholder="Enter Latitude">
+        <label for="Longitude">Longitude </label>
+        <input type="text" id="Longinput" name="Longinput" placeholder="Enter Longitude">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <form action="/getmaxbymag" method="POST">
+        <h4>quest 11 by mag range top 5</h4>
+        <br>
+        <label for="Maghigh">mag high </label> 
+        <input type="text" id="Maghigh" name="Maghigh" placeholder="mag high">
+        <label for="Maglow"> Loungitude high :</label>
+        <input type="text" id="Maglow" name="Maglow" placeholder="Maglow">
+        <label for="Column">column </label> 
+        <input type="text" id="Column" name="Column" placeholder="Column">
+        <br>
+        <input type="submit" value="Submit">
+    </form>    
+    <form action="/toreplacenet" method="POST">
+        <h4>ques 13 to replace net</h4>
+        <br>
+        <label for="Net_current">current </label> 
+        <input type="text" id="net_current" name="Net_current" placeholder="Net_current">
+        <label for="Net_update"> net_update</label>
+        <input type="text" id="Net_update" name="Net_update" placeholder="Net_update">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <form action="/boxplot" method="POST">
+        <h4>ques 12 </h4>
+        <br>
+        <label for="Latinput1">Latinput1 </label> 
+        <input type="text" id="Latinput1" name="Latinput1" placeholder="Latinput1">
+        <label for="Latinput2"> Latinput2</label>
+        <input type="text" id="Latinput2" name="Latinput2" placeholder="Latinput2">
+        <label for="Longinput1"> Longinpu1</label>
+        <input type="text" id="Longinput1" name="Longinput1" placeholder="Longinput1">
+        <label for="Longinput2"> Longinput1</label>
+        <input type="text" id="Longinput2" name="Longinput2" placeholder="Longinput2">
+       
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+</body>    

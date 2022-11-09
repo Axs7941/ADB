@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}  
+</style>
+<h1 style="text-align:center;"><u>Abhyudai Singh 1002027941</u> </h1>
+<p> <img src="./static/image0.jpeg"  style="width:200px;height:200px;"></p>
+</head>
+<body>
+    <h4>  All Data   </h4>
+    <form action = "/alldata" method="POST">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+    <h4> Mag Count Dynamic</h4>
+    <form action = "/magcount" method="POST">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+    <h4> Mag Count Static</h4>
+    <form action = "/magcountstatic" method="POST">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+    <h4> Mag Count Static vertical</h4>
+    <form action = "/magcountstaticvertical" method="POST">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+    <div class="container">
+        <div class="box">
+            <form action = "/scatter" method="POST">
+            <div>   
+                    <label for="fname" class="text">SCATTER CHAT FOR EARTHQUAKE</label>
+                    <br>
+                    <label for="val1" class="text">volcano number range1:</label>
+                    <input type="text" id="val1" name="val1" placeholder="40000">
+                    <label for="val2" class="text">volcano number range2:</label>
+                    <input type="text" id="val2" name="val2" placeholder="100000">
+                    <input type="submit" value="Submit" name="fbutton" class="button">
+                    <br>
+                    <label class="text, text2">HOVER Mouse for more detail</label>
+            </div>
+            </form>
+    <form action="/partitionbymag" method="POST">
+        <h4>Partition by N pie pie </h4>
+        <br>
+        <label for="Partition">Partition</label> 
+        <input type="text" id="Partition" name="Partition" placeholder="Enter Partition">
+        <br>
+        <label for="MagRangemax">Mag Upper bound range</label> 
+        <input type="text" id="MagRangemax" name="MagRangemax" placeholder="Enter Mag Range max">
+        <label for="MagRangelow">Mag Lower bound range </label>
+        <input type="text" id="MagRangelow" name="MagRangelow" placeholder="Enter Mag Range low">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <hr>
+    <form action="/partitionbymag1" method="POST">
+        <h4>Partition by N 11</h4>
+        <br>
+        <label for="Partition">Partition</label> 
+        <input type="text" id="Partition" name="Partition" placeholder="Enter Partition">
+        <br>
+        <label for="MagRangemax">Mag Upper bound range</label> 
+        <input type="text" id="MagRangemax" name="MagRangemax" placeholder="Enter Mag Range max">
+        <label for="MagRangelow">Mag Lower bound range </label>
+        <input type="text" id="MagRangelow" name="MagRangelow" placeholder="Enter Mag Range low">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <form action="/barbyN" method="POST">
+        <h4>Enter N 11</h4>
+        <br>
+        <label for="N">Enter N</label> 
+        <input type="text" id="N" name="N" placeholder="Enter N">
+        <input type="submit" value="Submit">
+    </form>  
+    <br>
+    <br>
+    <hr>
+    <form method="post" action="/barchart">
+        Value: <input type="text" name="Partition"/>
+        <input type="submit" value="Submit"><br/>
+    </form>  
+</body>
+</html>
